@@ -1,7 +1,7 @@
 ---
 title: 幾個 WebView 互動功能筆記
 date: 2022-03-22
-tags: ["iOS"]
+tags: ["iOS", "webview"]
 ---
 
 好像只有在亞洲地區才流行這樣的組合，也就是從 native app 畫面開 web view 切到行銷活動網頁，再透過 javascript 方式跟 app 互動之後回到 app 裡進行後面的導頁與串行銷資料。
@@ -32,7 +32,7 @@ webView.removeObserver(self, forKeyPath: "title")
         }
  }
  func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // dismiss loading view 
+        // dismiss loading view
  }
 ```
 
@@ -42,7 +42,7 @@ webView.removeObserver(self, forKeyPath: "title")
 var pageIsLoaded: (() -> Void)?
 
 func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        // dismiss loading view 
+        // dismiss loading view
         self.pageIsLoaded?()
 }
 ```
@@ -81,17 +81,17 @@ func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNa
 ```swift
 private var customConfiguration: WKWebViewConfiguration?
 private weak var scriptMessageHandler: WKScriptMessageHandler?
- 
+
 private func setupWebViewConfiguration() {
     self.scriptMessageHandler = self
     if let handler = scriptMessageHandler {
         let contentController = WKUserContentController()
         contentController.add(handler, name: WebViewScriptHandlerName.ncbmb.rawValue)
-            
+
         self.customConfiguration = WKWebViewConfiguration()
         self.customConfiguration?.userContentController = contentController
     }
-        
+
     webView = WKWebView(frame: .zero, configuration: self.customConfiguration ?? WKWebViewConfiguration())
     webView.clearCache()
     webView.backgroundColor = .white
@@ -108,7 +108,7 @@ func dismissWebVC() {
     self.dismiss(animated: false) { [weak self] in
         self?.webView?.configuration.userContentController.removeScriptMessageHandler(forName: WebViewScriptHandlerName.ncbmb.rawValue)
         self?.scriptMessageHandler = nil
-        
+
         if self?.intent?.followWebTitle == true {
             self?.webView?.removeObserver(self!, forKeyPath: "title")
         }
@@ -124,7 +124,7 @@ func dismissWebVC() {
 func sendMessage(message: ScriptBaseMessage) {
     guard let json = message.toJsonString() else { return }
 
-    self.webView.evaluateJavaScript("sendMsg('\(json)')", 
+    self.webView.evaluateJavaScript("sendMsg('\(json)')",
         completionHandler: { _, _ in
     })
 }
@@ -142,7 +142,7 @@ func userContentController(_ userContentController: WKUserContentController, did
 private func getData<T: ScriptBaseMessage>(_ type: T.Type, message: WKScriptMessage) -> T? {
     guard let body = message.body as? String else { return nil }
     guard let postMessage = try? JSONDecoder().decode(T.self, from: Data(body.utf8)) else { return nil }
-        
+
     return postMessage
 }
 

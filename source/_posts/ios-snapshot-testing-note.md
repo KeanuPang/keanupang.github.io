@@ -1,7 +1,7 @@
 ---
 title: Snapshot Testing 的調整經驗筆記
 date: 2022-03-02
-tags: ["iOS", "unit-test"]
+tags: ["ios", "unit-test"]
 ---
 
 我們的專案已經有 816 snapshot tests 並且有 600 張 snapshots，對專案的 coverage 約 47%，對產品的品質信心算是滿足夠的。
@@ -14,17 +14,16 @@ tags: ["iOS", "unit-test"]
 
 本來是在這邊 [GitHub – benhoyt/dhash](https://github.com/benhoyt/dhash) 看到這個，查了一下大概就是這幾種 hash 方法的比較，來源是 [GitHub – ameingast/cocoaimagehashing](https://github.com/ameingast/cocoaimagehashing) 這裡：
 
-|Name	|Performance|Quality	|
-|-------|-----------|-----------|
-|aHash  |good		|bad		|
-|dHash	|excellent	|good		|
-|pHash	|bad		|excellent	|
+| Name  | Performance | Quality   |
+| ----- | ----------- | --------- |
+| aHash | good        | bad       |
+| dHash | excellent   | good      |
+| pHash | bad         | excellent |
 
 其實滿推崇 pHash 的方法，看 [別人分享 iOS 上測試的過程](https://medium.com/swlh/ios-snapshot-testing-with-perceptual-hash-16b23aadf6c3) 具有很多優勢；但因為 dHash 實作上相對容易，也滿多實作的作品可以參考。自己參考的實作是這兩篇：
 
 1. [DHash/DHash.swift at master · AndreasVerhoeven/DHash · GitHub](https://github.com/AndreasVerhoeven/DHash/blob/master/Sources/DHash.swift)
 2. [hamming-distance-8.swift · GitHub](https://gist.github.com/VojtaStavik/35ad31e37c3a34ee930685f9dbc36bf1)
-
 
 套用在專案裡做出來的效果算是有滿足需求，但因為還是會有遇到色彩偏差的圖片，所以調整了預設的 `treshold` 為 6，目前整個 816 snapshot tests 跑完在不同機器都不會發生類似的問題。
 

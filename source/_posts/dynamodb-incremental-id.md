@@ -1,7 +1,7 @@
 ---
 title: 建立 DynamoDB 的 Incremental ID 機制
 date: 2017-12-12
-tags: ["aws", "dynamodb", "webservice"]
+tags: ["aws", "dynamodb", "web-service"]
 ---
 
 需要在 DynamoDB 的某個 table 的 Hash Key 是用 auto increment 的方式儲存 id，不過如果只單靠一張 table 有點難完成這樣的機制，所以需要再生另一張 table 用來存放目前的值，讓原本的 table 可以去參考以取得新增後的數值回來儲存。
@@ -10,20 +10,20 @@ tags: ["aws", "dynamodb", "webservice"]
 
 > Each time you want to generate a new id, you would do the following:
 >
-> -   Do a GetItem on NextIdTable to read the current value of Counter → curValue
+> - Do a GetItem on NextIdTable to read the current value of Counter → curValue
 >
-> -   Do a PutItem on NextIdTable to set the value of Counter to curValue + 1. Make this a conditional > PutItem so that it will fail if the value of Counter has changed.
+> - Do a PutItem on NextIdTable to set the value of Counter to curValue + 1. Make this a conditional > PutItem so that it will fail if the value of Counter has changed.
 >
-> -   If that conditional PutItem failed, it means someone else was doing this at the same time as you were. Start over.
+> - If that conditional PutItem failed, it means someone else was doing this at the same time as you were. Start over.
 >
-> -   If it succeeded, then curValue is your new unique ID.
+> - If it succeeded, then curValue is your new unique ID.
 
 為了日後的彈性，所以做了一張叫 `NextId` table，裡面的資料格式長這樣：
 
 ```json
 {
-    "NextKey": "user",
-    "NextId": 0
+  "NextKey": "user",
+  "NextId": 0
 }
 ```
 
@@ -35,18 +35,18 @@ tags: ["aws", "dynamodb", "webservice"]
 
 ```javascript
 NextId.update(
-    { NextKey: data_type },
-    "SET #nextId=:nextId",
-    "#nextId = :current",
-    { ":nextId": current + 1, ":current": data_current },
-    { "#nextId": "NextId" },
-    (err, result) => {
-        if (err) {
-            winston.error("=== Update NextId (%s) failed: %j", data_type, err);
-            return done(err);
-        }
-        return done(null, result);
+  { NextKey: data_type },
+  "SET #nextId=:nextId",
+  "#nextId = :current",
+  { ":nextId": current + 1, ":current": data_current },
+  { "#nextId": "NextId" },
+  (err, result) => {
+    if (err) {
+      winston.error("=== Update NextId (%s) failed: %j", data_type, err);
+      return done(err);
     }
+    return done(null, result);
+  }
 );
 ```
 
@@ -57,20 +57,20 @@ NextId.update(
 ```javascript
 const DATA_TYPE = "user";
 module.exports = (UserNew) => {
-    UserNew.observe("before save", (ctx, next) => {
-        if (!ctx.instance) {
-            return next();
-        }
-        let user = ctx.instance;
-        UserNew.app.models.NextId.getNextId(DATA_TYPE, (err, result) => {
-            if (err) {
-                winston.error("=== Calling nextId failed: %j", err);
-                return next();
-            }
-            user.Id = result.get("NextId") + "";
-            next();
-        });
+  UserNew.observe("before save", (ctx, next) => {
+    if (!ctx.instance) {
+      return next();
+    }
+    let user = ctx.instance;
+    UserNew.app.models.NextId.getNextId(DATA_TYPE, (err, result) => {
+      if (err) {
+        winston.error("=== Calling nextId failed: %j", err);
+        return next();
+      }
+      user.Id = result.get("NextId") + "";
+      next();
     });
+  });
 };
 ```
 

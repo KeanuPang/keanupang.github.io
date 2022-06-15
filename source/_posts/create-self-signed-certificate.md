@@ -1,7 +1,7 @@
 ---
 title: Create a Self-Signed Certificate
 date: 2016-04-30
-tags: ["Certificate"]
+tags: ["certificate"]
 ---
 
 在工作上因為每過一陣子就會用到，但又常常忘記步驟所以筆記一下。

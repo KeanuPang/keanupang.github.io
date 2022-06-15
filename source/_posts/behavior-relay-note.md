@@ -1,7 +1,7 @@
 ---
 title: BehaviorRelay 筆記
 date: 2021-10-26
-tags: ["RxSwift"]
+tags: ["rxswift"]
 ---
 
 因為是單向的資訊流，在每次更新資訊時都是用 ``.accept` 送出最近資訊，所以最好的做法是如果本身的資訊是組合性的 struct 則拆開成數個 BehaviorRelay 各別更新會比較好，這樣綁定在不同的 UIView 元件會比較好處理。
@@ -15,7 +15,6 @@ struct Info {
   var propertyC: Bool = false
 }
 ```
-
 
 就拆成三個 property 各自維護：
 

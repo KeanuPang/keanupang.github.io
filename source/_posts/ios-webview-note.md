@@ -1,7 +1,7 @@
 ---
 title: 幾個 WebView 互動功能筆記
 date: 2022-03-22
-tags: ["iOS", "webview"]
+tags: ["ios", "webview"]
 ---
 
 好像只有在亞洲地區才流行這樣的組合，也就是從 native app 畫面開 web view 切到行銷活動網頁，再透過 javascript 方式跟 app 互動之後回到 app 裡進行後面的導頁與串行銷資料。

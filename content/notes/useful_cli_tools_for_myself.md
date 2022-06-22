@@ -1,6 +1,6 @@
 ---
 title: "Some useful CLI tools for myself"
-date: 2022-06-22T14:06:10+08:00
+date: 2022-02-16
 draft: false
 ---
 

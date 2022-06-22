@@ -1,0 +1,72 @@
+baseURL: "http://localhost"
+title: "Living today for tomorrow"
+paginate: 10
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+enableEmoji: true
+pygmentsUseClasses: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: About
+          url: about
+          weight: 1
+        - name: Posts
+          url: posts
+          weight: 5
+        - name: Notes
+          url: notes
+          weight: 6
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "Living today for tomorrow"
+  author: "Keanu Pang"
+
+  defaultTheme: light
+  disableThemeToggle: true
+  ShowShareButtons: true
+  ShowReadingTime: false
+  # disableSpecial1stPost: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: false
+  ShowCodeCopyButtons: false
+  ShowRssButtonInSectionTermList: false
+  disableScrollToTop: false
+  ShowToc: false
+  comments: true
+
+  homeInfoParams:
+    Title: ""
+    Content: >
+      They say, "Evil prevails when good men fail to act."
+
+      - What they ought to say is, "Evil prevails." - Yuri Orlov, Lord of War
+
+  socialIcons:
+    - name: GitHub
+      url: "https://github.com/KeanuPang"
+    - name: Twitter
+      url: "https://twitter.com/Silvereanu"
+    - name: RSS
+      url: "index.xml"
+    - name: Email
+      url: "mailto:keanu.pang@gmail.com"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai

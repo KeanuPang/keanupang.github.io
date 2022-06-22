@@ -20,9 +20,6 @@ languages:
         - name: Posts
           url: posts
           weight: 5
-        - name: Notes
-          url: notes
-          weight: 6
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.

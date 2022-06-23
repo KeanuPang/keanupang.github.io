@@ -1,4 +1,4 @@
-baseURL: "http://localhost"
+baseURL: "https://keanupang.github.io"
 title: "Living today for tomorrow"
 paginate: 10
 theme: PaperMod

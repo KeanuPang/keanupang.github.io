@@ -2,6 +2,7 @@
 title: "ArangoDB 的資料檔備份與還原"
 date: 2021-12-09
 draft: false
+tags: ["arrangodb"]
 ---
 
 之前在測試 ArangoDB 操作特別註記下來的小筆記。

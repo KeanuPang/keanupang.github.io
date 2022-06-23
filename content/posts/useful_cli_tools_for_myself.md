@@ -2,6 +2,7 @@
 title: "Some useful CLI tools for myself"
 date: 2022-02-16
 draft: false
+tags: ["tools"]
 ---
 
 列幾個針對檔案操作的 CLI 工具是我在平日工作時比較常會用到的，最常用的就是 AG 了，在查找專案目錄下的特定關鍵字顯得非常方便快速。

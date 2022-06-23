@@ -2,6 +2,7 @@
 title: "快速實驗與驗證功能的小工具 swift-sh"
 date: 2021-12-03
 draft: false
+tags: ["swift"]
 ---
 
 OK, 我們現在可以用 [swift-sh](https://github.com/mxcl/swift-sh) 工具預先安裝到系統裡，這樣子之後只要做小型測試時只要單一個 swift 檔案，裡面標註 import 的敘述，就可以直接執行它。

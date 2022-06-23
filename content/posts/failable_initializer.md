@@ -2,6 +2,7 @@
 title: "Failable Initializer 筆記"
 date: 2021-06-01
 draft: false
+tags: ["swift"]
 ---
 
 之前在 [這篇文章](https://serialcoder.dev/text-tutorials/swift-tutorials/failable-initializer-in-swift/) 看到的。

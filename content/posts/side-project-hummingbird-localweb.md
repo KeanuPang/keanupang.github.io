@@ -2,6 +2,7 @@
 title: "試玩 Hummingbird 的 middleware"
 date: 2022-06-28T02:05:11+08:00
 draft: false
+tags: ["swift", "web-service"]
 ---
 
 之前為了測試 [Hummingbird](https://github.com/hummingbird-project/hummingbird) 這個輕量 server framework 所以做了一個叫 LocalWeb 的 web project，主要是用來讓使用者在開發環境下方便地瀏覽與下載檔案；結果沒想到內建的 middleware 就幾乎把所有事情都搞定了。

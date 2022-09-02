@@ -4,6 +4,8 @@ date: 2022-08-05T10:10:35+08:00
 draft: false
 ---
 
+_update 2022-09-02: Edge Extension 部份加上 SwissTransfer 服務_
+
 最近正在整理公司電腦的作業環境，先集結成工具清單這樣方便之後換電腦就可以快速 setup 好。做程式開發常用的工具軟體就不列上去了，反正該做什麼工作就會對應到什麼軟體，基本上大家會使用的都是那幾套，所以這邊只記錄我自己偏好使用的工具集。
 
 ### Menu Bar
@@ -125,3 +127,7 @@ SmartGit 有最直觀簡潔的操作介面，切換 branch、做 merge/rebase、
 - [uBlacklist](https://chrome.google.com/webstore/detail/ublacklist/pncfbmialoiaghdehhbnbhkkgmjanfhe)
 
 這很重要的小工具，在 google 查詢結果可以把看起來討厭或可疑的網站直接點掉 block 起來。這在對付中國一堆內容流量詐騙網站很有用，然後台灣的 Pixnet 我也是一律 block。
+
+- [SwissTransfer](https://chrome.google.com/webstore/detail/swisstransfer-by-infomani/fgnamjpfdanadgjchlokpiclkdgnnkdj)
+
+還不錯的網站服務，不用登入或註冊直接上傳大檔案並分享給他人。以前有知道 WeTransfer 這個服務，但 SwissTransfer 的上限是 50G 單檔而且介面比較簡易操作，所以就加入最愛了。

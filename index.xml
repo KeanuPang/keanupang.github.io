@@ -1,4 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Living today for tomorrow</title><link>https://keanupang.github.io/</link><description>Recent content on Living today for tomorrow</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Fri, 02 Sep 2022 10:26:31 +0800</lastBuildDate><atom:link href="https://keanupang.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Rust Extensions with VS Code</title><link>https://keanupang.github.io/posts/rust-development-vscode/</link><pubDate>Fri, 02 Sep 2022 10:26:31 +0800</pubDate><guid>https://keanupang.github.io/posts/rust-development-vscode/</guid><description>最近在初學 Rust 然後為了要在 VS Code 裡能有較好的開發體驗，所以找了幾個還不錯的 extensions 方便使用。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Living today for tomorrow</title><link>https://keanupang.github.io/</link><description>Recent content on Living today for tomorrow</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 11 Sep 2023 16:22:12 +0800</lastBuildDate><atom:link href="https://keanupang.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Celebrating a Milestone</title><link>https://keanupang.github.io/posts/celebrating-a-milestone/</link><pubDate>Mon, 11 Sep 2023 16:22:12 +0800</pubDate><guid>https://keanupang.github.io/posts/celebrating-a-milestone/</guid><description>工作來到一個里程碑，其實因為不同的工作節奏所以心得也是有好有壞；壞的部份就留在心裡等到哪天爆炸時再說好了，先來講講正面的事情也許心態上會比較樂觀一點 (?
+更多的自省
+因為大半時間都自己獨處在一個私人的空間裡，最主要是能夠自我思考的時間變多，雖然工時還是相對地緊，但看待一些事情的想法會比以往再成熟一點；面對工作的結果產生與決策也會在第一時間先反省還有哪些不足的地方或需要改進的點。
+自己也一直在反思若換成別的同事站在這個位置會採取什麼做法來處理工作，更會去看別人怎麼發揮長處，試著更進一步用不同的角度看待問題，也試著提醒自己心態上要更穩重。
+更多的溝通
+這邊是指內部的橫向溝通，向上管理這塊我直接放棄。自己花了非常多時間在橫向溝通這塊，確保工作的目標一致並且達成共識，也協助問題的排查處理，多一個人多一個角度看待問題就多一個解決問題的方法。 當然還是有很多的進步空間，例如遇到比較資深或比較自我的同事就要花更多思考力氣去溝通跟協調。不過都是自己人還比較好處理，跨部門的狀況反而是最難搞的，也是最心累最沒人可以幫的。
+多半遇到的工作危機都是在這些跨部門溝通不良的情況下發生，信任不足，說空話，各自為政，都是滿關鍵的心態問題累積造成的。
+更多的技術成長
+學到很多是真的收獲滿滿，特別是 reivew 別人的程式碼真的是五花八門花樣百出，很難想像過去年輕的自己寫出這樣的程式會被前輩給予什麼樣的評價。 對於軟技術該成長到什麼地步倒沒有標準答案，通常是看得越多就越顯得自己無知，回去看收件夾滿滿的待看清單就知道沒有所謂的盡頭。
+過去的工作經驗其實也是在提醒自己，很多缺點在十年前就知道了，也是因為這些缺點讓自己走向不同道路；中間好幾次機會在招手時，自己也是心裡知道這些缺點都一直存在，再往下掉實在沒有意義，只是萬萬沒想到今天這一步還是算錯。
+挨著性子先把自己的情緒穩定，檢討看看是不是能夠有什麼樣的工作調整好讓自己能在這個位子上繼續發揮，很多時候面對的不是單純工作本身，而是人與人之間的政治關係，這種困境不是找誰誰誰出面溝通就能解決的，在這種醬缸文化裡提出問題的人反而還比較危險，特別的是如果本來的圈子就不是交集的話，摸摸鼻子也不能再多做點什麼。
+下個 milestone 就待續吧。</description></item><item><title>Rust Extensions with VS Code</title><link>https://keanupang.github.io/posts/rust-development-vscode/</link><pubDate>Fri, 02 Sep 2022 10:26:31 +0800</pubDate><guid>https://keanupang.github.io/posts/rust-development-vscode/</guid><description>最近在初學 Rust 然後為了要在 VS Code 裡能有較好的開發體驗，所以找了幾個還不錯的 extensions 方便使用。
 rust-analyzer
 必裝的工具，我自己是安裝 Pre-Release 的版本先享受比較新的功能，目前使用上算穩定。
 Event Better TOML
